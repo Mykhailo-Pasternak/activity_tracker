@@ -1,0 +1,77 @@
+* {
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 6rem auto;
+  height: 800px;
+  width: 1200px;
+  background: #f7f7f7;
+}
+
+.wrapper__title {
+  height: 100px;
+  width: 1200px;
+  border: 2px solid #848fa1;
+  border-radius: 15px;
+  background: #cae9fd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 36px;
+  color: #141477;
+}
+
+.wrapper__form {
+  margin: 2rem auto 3rem;
+  height: 100px;
+  width: 1200px;
+  border: 2px solid #848fa1;
+  border-radius: 15px;
+  background: #ebfef2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper__form__button {
+  background: #49525d;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  height: 37px;
+  width: 150px;
+}
+
+.wrapper__form input {
+  border: 1.5px solid #616161;
+  border-radius: 10px;
+  height: 37px;
+}
+
+.wrapper__form span {
+  color: #444d59;
+  font-size: 20px;
+}
+
+.wrapper__form select {
+  border: 1.5px solid #616161;
+  border-radius: 10px;
+  height: 37px;
+  width: 150px;
+}
+/*# sourceMappingURL=ActivitiTracker.css.map */
