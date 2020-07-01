@@ -1,7 +1,7 @@
 import React from "react";
 
 function ListOfActivities({ myActivities }) {
-  const list = myActivities.map((OneActivity) => (
+  let list = myActivities.map((OneActivity) => (
     <li className="list__OneOfActivity" key={OneActivity.id}>
       <div className="list__OneOfActivity__data">{OneActivity.date}</div>{" "}
       <div className="list__OneOfActivity__Tipe">
@@ -16,11 +16,15 @@ function ListOfActivities({ myActivities }) {
         {OneActivity.amountOFTime} minutes
       </div>{" "}
       <div className="list__OneOfActivity__speed">
-        {" "}
-        {OneActivity.speed} km/hour
+        {(OneActivity.speed =
+          (OneActivity.distance / OneActivity.amountOFTime) * 60).toFixed(
+          1
+        )}{" "}
+        km/hour
       </div>
     </li>
   ));
+  console.log(list);
 
   return (
     <>
