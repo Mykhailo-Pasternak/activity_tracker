@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./ActivitiTracker";
+import App from "./ActivityTracker";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
