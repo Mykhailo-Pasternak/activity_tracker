@@ -6,6 +6,10 @@
   font-family: "Raleway", sans-serif;
 }
 
+input {
+  font-size: 16px;
+}
+
 .wrapper {
   margin: 6rem auto;
   height: 800px;
@@ -89,34 +93,92 @@
 
 .boxOfResult__activities {
   margin: 0;
-  width: 700px;
-  height: 600px;
+  width: 850px;
+  height: 550px;
 }
 
 .boxOfResult__result {
   margin: 0;
-  width: 450px;
-  background: rgba(174, 255, 137, 0.418);
-  height: 600px;
+  width: 350px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.boxOfResult__result__longest {
+  width: 350px;
+  background: rgba(53, 241, 28, 0.205);
+  height: 250px;
+  border: 2px solid rgba(97, 97, 97, 0.904);
+  border-radius: 15px;
+}
+
+.boxOfResult__result__totalDistance {
+  width: 350px;
+  background: rgba(218, 253, 23, 0.342);
+  height: 120px;
+  border: 2px solid rgba(97, 97, 97, 0.904);
+  border-radius: 15px;
+  font-size: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.boxOfResult__result__totalDistance__longestRun {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #694e01;
+}
+
+.boxOfResult__result__totalDistance__longestRide {
+  margin-bottom: 8px;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #694e01;
 }
 
 .list {
   margin: 0;
   padding: 0;
-  width: 700px;
+  width: 800px;
   list-style: none;
 }
 
 .list__OneOfActivity {
   margin-bottom: 20px;
   height: 50px;
-  width: 700px;
+  width: 800px;
   background: rgba(207, 250, 15, 0.144);
   border: 1.5px solid #616161;
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #074b01;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;

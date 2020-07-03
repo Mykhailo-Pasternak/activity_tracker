@@ -24,7 +24,6 @@ function ListOfActivities({ myActivities }) {
       </div>
     </li>
   ));
-  console.log(list);
 
   return (
     <>

@@ -5,6 +5,10 @@
   font-family: "Raleway", sans-serif;
 }
 
+input {
+  font-size: 16px;
+}
+
 .wrapper {
   margin: 6rem auto;
   height: 800px;
@@ -69,32 +73,69 @@
 
   &__activities {
     margin: 0;
-    width: 700px;
+    width: 850px;
     // background: rgba(137, 255, 235, 0.11);
-    height: 600px;
+    height: 550px;
   }
   &__result {
     margin: 0;
-    width: 450px;
-    background: rgba(174, 255, 137, 0.418);
-    height: 600px;
+    width: 350px;
+    // background: rgba(222, 137, 255, 0.11);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__longest {
+      width: 350px;
+      background: rgba(53, 241, 28, 0.205);
+      height: 250px;
+      border: 2px solid rgba(97, 97, 97, 0.904);
+      border-radius: 15px;
+    }
+    &__totalDistance {
+      width: 350px;
+      background: rgba(218, 253, 23, 0.342);
+      height: 120px;
+      border: 2px solid rgba(97, 97, 97, 0.904);
+      border-radius: 15px;
+      font-size: 21px;
+      // font-weight: 600;
+      display: flex;
+
+      justify-content: center;
+      flex-direction: column;
+      &__longestRun {
+        width: 350px;
+        display: flex;
+        justify-content: space-around;
+        color: rgb(105, 78, 1);
+      }
+      &__longestRide {
+        margin-bottom: 8px;
+        width: 350px;
+        display: flex;
+        justify-content: space-around;
+        color: rgb(105, 78, 1);
+      }
+    }
   }
 }
 
 .list {
   margin: 0;
   padding: 0;
-  width: 700px;
+  width: 800px;
   list-style: none;
 
   &__OneOfActivity {
     margin-bottom: 20px;
     height: 50px;
-    width: 700px;
+    width: 800px;
     background: rgba(207, 250, 15, 0.144);
     border: 1.5px solid rgb(97, 97, 97);
     border-radius: 5px;
     display: flex;
+    color: rgb(7, 75, 1);
 
     justify-content: space-around;
     align-items: center;

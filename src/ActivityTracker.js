@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import ListOfActivities from "./components/ListOfActivities";
-
+import Longest from "./components/Longest";
+import TotalDistance from "./components/TotalDistance";
 import "./ActivityTracker.css";
 
 function ActivitiTracker() {
@@ -24,10 +25,18 @@ function ActivitiTracker() {
     },
     {
       id: 3,
-      date: "September 30",
+      date: "September 14",
       activityTipe: "Run",
       distance: 3.4,
       amountOFTime: 35,
+      speed: 0,
+    },
+    {
+      id: 4,
+      date: "September 30",
+      activityTipe: "Ride",
+      distance: 7,
+      amountOFTime: 40,
       speed: 0,
     },
   ]);
@@ -78,7 +87,7 @@ function ActivitiTracker() {
           id: Date.now(),
           date: mountInLetters + date.getDate(),
           activityTipe: Activity,
-          distance: Distance,
+          distance: Number(Distance),
           amountOFTime: resultTime,
           speed: 6.4,
         },
@@ -138,7 +147,14 @@ function ActivitiTracker() {
         <div className="boxOfResult__activities">
           <ListOfActivities myActivities={listOfActivities} />
         </div>{" "}
-        <div className="boxOfResult__result">result</div>
+        <div className="boxOfResult__result">
+          <div className="boxOfResult__result__longest">
+            <Longest listOfActivities={listOfActivities} />
+          </div>
+          <div className="boxOfResult__result__totalDistance">
+            <TotalDistance listOfActivities={listOfActivities} />
+          </div>
+        </div>
       </div>
     </div>
   );
