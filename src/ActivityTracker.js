@@ -32,16 +32,12 @@ function ActivitiTracker() {
     },
   ]);
 
-  // let data = getMonth();
-  // date += getDate();
-  // console.log(date);
-
+  // --  Getting a real date  ---
   var date = new Date();
   let mounthInNumber = date.getMonth();
   let mountInLetters = "";
   mounthInNumber += 1;
 
-  console.log(mounthInNumber);
   if (mounthInNumber === 1) {
     mountInLetters = "January";
   } else if (mounthInNumber === 2) {
@@ -67,6 +63,7 @@ function ActivitiTracker() {
   } else if (mounthInNumber === 12) {
     mountInLetters = "December";
   }
+  //-------------------------------
 
   const [StartTime, setStartTime] = useState("");
   const [FinishTime, setFinishTime] = useState("");
@@ -82,14 +79,22 @@ function ActivitiTracker() {
           date: mountInLetters + date.getDate(),
           activityTipe: Activity,
           distance: Distance,
-          amountOFTime: 35,
+          amountOFTime: resultTime,
           speed: 6.4,
         },
       ])
     );
   }
 
-  console.log();
+  //  ---   Activity time -----
+  let parts = StartTime.split(":");
+  let parts2 = FinishTime.split(":");
+
+  let minuteItStart = Number(parts[0]) * 60 + Number(parts[1]);
+  let minuteItFinish = Number(parts2[0]) * 60 + Number(parts2[1]);
+
+  let resultTime = minuteItFinish - minuteItStart;
+  // ------------------
 
   return (
     <div className="wrapper">

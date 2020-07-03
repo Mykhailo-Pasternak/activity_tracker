@@ -10,7 +10,6 @@
   margin: 6rem auto;
   height: 800px;
   width: 1200px;
-  background: #f7f7f7;
 }
 
 .wrapper__title {
@@ -91,7 +90,6 @@
 .boxOfResult__activities {
   margin: 0;
   width: 700px;
-  background: rgba(137, 255, 235, 0.11);
   height: 600px;
 }
 
