@@ -9,7 +9,7 @@ function ActivitiTracker() {
   const [listOfActivities, setList] = useState([
     {
       id: 1,
-      date: "Octber 14",
+      date: "October 14",
       activityTipe: "Run",
       distance: 5,
       amountOFTime: 30,
@@ -17,7 +17,7 @@ function ActivitiTracker() {
     },
     {
       id: 2,
-      date: "Octber 23",
+      date: "October 23",
       activityTipe: "Ride",
       distance: 10.2,
       amountOFTime: 28,
@@ -25,7 +25,7 @@ function ActivitiTracker() {
     },
     {
       id: 3,
-      date: "September 14",
+      date: "September 12",
       activityTipe: "Run",
       distance: 3.4,
       amountOFTime: 35,
