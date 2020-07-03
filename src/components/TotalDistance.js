@@ -12,8 +12,6 @@ function TotalDistance({ listOfActivities }) {
     }
   }
 
-  //   console.log(listOfActivities[1].activityTipe);
-
   return (
     <>
       {" "}

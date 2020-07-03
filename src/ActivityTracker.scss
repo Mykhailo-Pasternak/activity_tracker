@@ -76,6 +76,7 @@ input {
     width: 850px;
     // background: rgba(137, 255, 235, 0.11);
     height: 550px;
+    overflow-y: auto;
   }
   &__result {
     margin: 0;
@@ -91,6 +92,37 @@ input {
       height: 250px;
       border: 2px solid rgba(97, 97, 97, 0.904);
       border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      align-content: center;
+      font-size: 21px;
+      color: rgb(56, 34, 0);
+      &__longestRide {
+        &__Title {
+          padding-left: 100px;
+        }
+
+        &__result {
+          padding-top: 10px;
+          width: 350px;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+      &__longestRun {
+        margin-top: -20px;
+        &__Title {
+          padding-left: 100px;
+        }
+        &__result {
+          padding-top: 10px;
+          width: 350px;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
     }
     &__totalDistance {
       width: 350px;
@@ -108,14 +140,14 @@ input {
         width: 350px;
         display: flex;
         justify-content: space-around;
-        color: rgb(105, 78, 1);
+        color: rgb(31, 70, 0);
       }
       &__longestRide {
         margin-bottom: 8px;
         width: 350px;
         display: flex;
         justify-content: space-around;
-        color: rgb(105, 78, 1);
+        color: rgb(31, 70, 0);
       }
     }
   }

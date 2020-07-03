@@ -113,16 +113,19 @@ function ActivitiTracker() {
           <b> Add new activity:</b>
         </span>
         <input
+          required
           value={StartTime}
           placeholder="&#8194;Start time"
           onChange={(event) => setStartTime(event.target.value)}
         />
         <input
+          required
           value={FinishTime}
           placeholder="&#8194;Finish time"
           onChange={(event) => setFinishTime(event.target.value)}
         />
         <input
+          required
           value={Distance}
           placeholder="&#8194;Distance"
           onChange={(event) => setDistance(event.target.value)}
