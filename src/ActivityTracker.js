@@ -1,8 +1,9 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ListOfActivities from "./components/ListOfActivities";
 import Longest from "./components/Longest";
 import TotalDistance from "./components/TotalDistance";
+import axios from "axios";
 import "./ActivityTracker.css";
 
 function ActivitiTracker() {
@@ -40,6 +41,52 @@ function ActivitiTracker() {
       speed: 0,
     },
   ]);
+
+  // Fetch all books on initial render
+
+  // Fetch book called on mount
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  // Fetch all books
+  const fetchBooks = async () => {
+    // Send GET request to 'books/all' endpoint
+    axios
+      .get("http://localhost:4001/books/all")
+      .then((response) => {
+        // Update the books state
+        // setBooks(response.data);
+        // Update loading state
+        // setLoading(false);
+        console.log(response.data);
+      })
+      .catch((error) =>
+        console.error(`There was an error retrieving the book list: ${error}`)
+      );
+  };
+
+  const handleBookCreate = () => {
+    // Send POST request to 'books/create' endpoint
+    axios
+      .post("http://localhost:4001/books/create", {
+        author: 1,
+        title: "title",
+        pubDate: "pubDate",
+        rating: 3,
+      })
+      .then((response) => {
+        console.log(response.data);
+        // Fetch all books to refresh
+        // the books on the bookshelf list
+        fetchBooks();
+      })
+      .catch((error) =>
+        console.error(
+          `There was an error creating the ${"title"} book: ${error}`
+        )
+      );
+  };
 
   // --  Getting a real date  ---
   var date = new Date();
@@ -80,6 +127,7 @@ function ActivitiTracker() {
   const [Activity, setActivity] = useState("not indicated");
 
   function addActivity(event) {
+    handleBookCreate();
     event.preventDefault();
     setList(
       listOfActivities.concat([

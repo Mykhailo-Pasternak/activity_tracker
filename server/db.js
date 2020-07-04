@@ -24,6 +24,7 @@ knex.schema
       // "pubDate" and "rating" columns
       // and use "id" as a primary identification
       // and increment "id" with every new record (book)
+
       return knex.schema
         .createTable("books", (table) => {
           table.increments("id").primary();
