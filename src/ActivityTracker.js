@@ -42,48 +42,51 @@ function ActivitiTracker() {
     },
   ]);
 
-  // Fetch all books on initial render
+  // Fetch all Activities on initial render
 
-  // Fetch book called on mount
+  // Fetch Activity called on mount
   useEffect(() => {
-    fetchBooks();
+    fetchActivity();
   }, []);
 
-  // Fetch all books
-  const fetchBooks = async () => {
-    // Send GET request to 'books/all' endpoint
+  // Fetch all Activities
+  const fetchActivity = async () => {
+    // Send GET request to 'Activity/all' endpoint
     axios
-      .get("http://localhost:4001/books/all")
+      .get("http://localhost:4001/Activity/all")
       .then((response) => {
-        // Update the books state
-        // setBooks(response.data);
-        // Update loading state
-        // setLoading(false);
+        // ----- firts
+        setList(response.data);
         console.log(response.data);
-      })
-      .catch((error) =>
-        console.error(`There was an error retrieving the book list: ${error}`)
-      );
-  };
-
-  const handleBookCreate = () => {
-    // Send POST request to 'books/create' endpoint
-    axios
-      .post("http://localhost:4001/books/create", {
-        author: 1,
-        title: "title",
-        pubDate: "pubDate",
-        rating: 3,
-      })
-      .then((response) => {
-        console.log(response.data);
-        // Fetch all books to refresh
-        // the books on the bookshelf list
-        fetchBooks();
       })
       .catch((error) =>
         console.error(
-          `There was an error creating the ${"title"} book: ${error}`
+          `There was an error retrieving the Activity list: ${error}`
+        )
+      );
+  };
+
+  const handleActivityCreate = () => {
+    // Send POST request to 'Activity/create' endpoint
+    axios
+      .post("http://localhost:4001/Activity/create", {
+        // second ---------------------
+
+        date: mountInLetters + date.getDate(),
+        activityTipe: Activity,
+        distance: Number(Distance),
+        amountOFTime: resultTime,
+        speed: 6.4,
+      })
+      .then((response) => {
+        console.log(response.data);
+        // Fetch all Activities to refresh
+
+        fetchActivity();
+      })
+      .catch((error) =>
+        console.error(
+          `There was an error creating the ${"in this place"} Activity: ${error}`
         )
       );
   };
@@ -127,12 +130,11 @@ function ActivitiTracker() {
   const [Activity, setActivity] = useState("not indicated");
 
   function addActivity(event) {
-    handleBookCreate();
+    handleActivityCreate();
     event.preventDefault();
     setList(
       listOfActivities.concat([
         {
-          id: Date.now(),
           date: mountInLetters + date.getDate(),
           activityTipe: Activity,
           distance: Number(Distance),
