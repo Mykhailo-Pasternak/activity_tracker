@@ -7,40 +7,7 @@ import axios from "axios";
 import "./ActivityTracker.css";
 
 function ActivitiTracker() {
-  const [listOfActivities, setList] = useState([
-    {
-      id: 1,
-      date: "October 14",
-      activityTipe: "Run",
-      distance: 5,
-      amountOFTime: 30,
-      speed: 0,
-    },
-    {
-      id: 2,
-      date: "October 23",
-      activityTipe: "Ride",
-      distance: 10.2,
-      amountOFTime: 28,
-      speed: 0,
-    },
-    {
-      id: 3,
-      date: "September 12",
-      activityTipe: "Run",
-      distance: 3.4,
-      amountOFTime: 35,
-      speed: 0,
-    },
-    {
-      id: 4,
-      date: "September 30",
-      activityTipe: "Ride",
-      distance: 7,
-      amountOFTime: 40,
-      speed: 0,
-    },
-  ]);
+  const [listOfActivities, setList] = useState([]);
 
   // Fetch all Activities on initial render
 
@@ -72,8 +39,8 @@ function ActivitiTracker() {
         // second ---------------------
 
         date: mountInLetters + date.getDate(),
-        activityTipe: Activity,
-        distance: Number(Distance),
+        activityTipe: activity,
+        distance: Number(distance),
         amountOFTime: resultTime,
         speed: 6.4,
       })
@@ -106,41 +73,13 @@ function ActivitiTracker() {
   month[10] = "November ";
   month[11] = "December ";
   var mountInLetters = month[date.getMonth()];
-  // let mounthInNumber = date.getMonth();
-  // let mountInLetters = "";
-  // mounthInNumber += 1;
 
-  // if (mounthInNumber === 1) {
-  //   mountInLetters = "January";
-  // } else if (mounthInNumber === 2) {
-  //   mountInLetters = "February";
-  // } else if (mounthInNumber === 3) {
-  //   mountInLetters = "March";
-  // } else if (mounthInNumber === 4) {
-  //   mountInLetters = "April";
-  // } else if (mounthInNumber === 5) {
-  //   mountInLetters = "May ";
-  // } else if (mounthInNumber === 6) {
-  //   mountInLetters = "June ";
-  // } else if (mounthInNumber === 7) {
-  //   mountInLetters = "July ";
-  // } else if (mounthInNumber === 8) {
-  //   mountInLetters = "August ";
-  // } else if (mounthInNumber === 9) {
-  //   mountInLetters = "September";
-  // } else if (mounthInNumber === 10) {
-  //   mountInLetters = "October";
-  // } else if (mounthInNumber === 11) {
-  //   mountInLetters = "November";
-  // } else if (mounthInNumber === 12) {
-  //   mountInLetters = "December";
-  // }
   //-------------------------------
 
-  const [StartTime, setStartTime] = useState("");
-  const [FinishTime, setFinishTime] = useState("");
-  const [Distance, setDistance] = useState("");
-  const [Activity, setActivity] = useState("not indicated");
+  const [startTime, setStartTime] = useState("");
+  const [finishTime, setFinishTime] = useState("");
+  const [distance, setDistance] = useState("");
+  const [activity, setActivity] = useState("not indicated");
 
   function addActivity(event) {
     handleActivityCreate();
@@ -149,8 +88,8 @@ function ActivitiTracker() {
       listOfActivities.concat([
         {
           date: mountInLetters + date.getDate(),
-          activityTipe: Activity,
-          distance: Number(Distance),
+          activityTipe: activity,
+          distance: Number(distance),
           amountOFTime: resultTime,
           speed: 6.4,
         },
@@ -159,8 +98,8 @@ function ActivitiTracker() {
   }
 
   //  ---   Activity time -----
-  let parts = StartTime.split(":");
-  let parts2 = FinishTime.split(":");
+  let parts = startTime.split(":");
+  let parts2 = finishTime.split(":");
 
   let minuteItStart = Number(parts[0]) * 60 + Number(parts[1]);
   let minuteItFinish = Number(parts2[0]) * 60 + Number(parts2[1]);
@@ -177,19 +116,19 @@ function ActivitiTracker() {
         </span>
         <input
           required
-          value={StartTime}
+          value={startTime}
           placeholder="&#8194;Start time mm:ss"
           onChange={(event) => setStartTime(event.target.value)}
         />
         <input
           required
-          value={FinishTime}
+          value={finishTime}
           placeholder="&#8194;Finish time mm:ss"
           onChange={(event) => setFinishTime(event.target.value)}
         />
         <input
           required
-          value={Distance}
+          value={distance}
           placeholder="&#8194;Distance"
           onChange={(event) => setDistance(event.target.value)}
         />
