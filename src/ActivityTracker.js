@@ -84,23 +84,6 @@ function ActivitiTracker() {
   function addActivity(event) {
     handleActivityCreate();
     event.preventDefault();
-    setList(
-      listOfActivities.concat([
-        {
-          date: mountInLetters + date.getDate(),
-          activityTipe: activity,
-          distance: Number(distance),
-          amountOFTime: resultTime,
-          speed: 6.4,
-
-          // date: "May 3",
-          // activityTipe: "Run",
-          // distance: 7,
-          // amountOFTime: 43,
-          // speed: 6.4,
-        },
-      ])
-    );
   }
 
   //  ---   Activity time -----
