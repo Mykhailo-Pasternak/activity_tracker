@@ -92,6 +92,12 @@ function ActivitiTracker() {
           distance: Number(distance),
           amountOFTime: resultTime,
           speed: 6.4,
+
+          // date: "May 3",
+          // activityTipe: "Run",
+          // distance: 7,
+          // amountOFTime: 43,
+          // speed: 6.4,
         },
       ])
     );
