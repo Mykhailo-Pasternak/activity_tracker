@@ -109,7 +109,7 @@ function ActivitiTracker() {
 
   return (
     <div className="wrapper">
-      <div className="wrapper__title"> Activiti tracker</div>
+      <div className="wrapper__title"> Activity tracker</div>
       <form className="wrapper__form" action="URL" onSubmit={addActivity}>
         <span>
           <b> Add new activity:</b>
