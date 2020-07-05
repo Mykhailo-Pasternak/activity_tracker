@@ -2,7 +2,7 @@ import React from "react";
 
 function ListOfActivities({ myActivities }) {
   let list = myActivities.map((OneActivity) => (
-    <li className="list__OneOfActivity" key={Date.now()}>
+    <li className="list__OneOfActivity" key={OneActivity.id}>
       <div className="list__OneOfActivity__data">{OneActivity.date}</div>{" "}
       <div className="list__OneOfActivity__Tipe">
         {" "}
