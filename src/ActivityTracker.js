@@ -57,7 +57,6 @@ function ActivitiTracker() {
       .then((response) => {
         // ----- firts
         setList(response.data);
-        console.log(response.data);
       })
       .catch((error) =>
         console.error(
@@ -79,7 +78,6 @@ function ActivitiTracker() {
         speed: 6.4,
       })
       .then((response) => {
-        console.log(response.data);
         // Fetch all Activities to refresh
 
         fetchActivity();
@@ -93,35 +91,50 @@ function ActivitiTracker() {
 
   // --  Getting a real date  ---
   var date = new Date();
-  let mounthInNumber = date.getMonth();
-  let mountInLetters = "";
-  mounthInNumber += 1;
 
-  if (mounthInNumber === 1) {
-    mountInLetters = "January";
-  } else if (mounthInNumber === 2) {
-    mountInLetters = "February";
-  } else if (mounthInNumber === 3) {
-    mountInLetters = "March";
-  } else if (mounthInNumber === 4) {
-    mountInLetters = "April";
-  } else if (mounthInNumber === 5) {
-    mountInLetters = "May ";
-  } else if (mounthInNumber === 6) {
-    mountInLetters = "June ";
-  } else if (mounthInNumber === 7) {
-    mountInLetters = "July ";
-  } else if (mounthInNumber === 8) {
-    mountInLetters = "August ";
-  } else if (mounthInNumber === 9) {
-    mountInLetters = "September";
-  } else if (mounthInNumber === 10) {
-    mountInLetters = "October";
-  } else if (mounthInNumber === 11) {
-    mountInLetters = "November";
-  } else if (mounthInNumber === 12) {
-    mountInLetters = "December";
-  }
+  var month = [];
+  month[0] = "January ";
+  month[1] = "February ";
+  month[2] = "March ";
+  month[3] = "April ";
+  month[4] = "May ";
+  month[5] = "June ";
+  month[6] = "July ";
+  month[7] = "August ";
+  month[8] = "September ";
+  month[9] = "October ";
+  month[10] = "November ";
+  month[11] = "December ";
+  var mountInLetters = month[date.getMonth()];
+  // let mounthInNumber = date.getMonth();
+  // let mountInLetters = "";
+  // mounthInNumber += 1;
+
+  // if (mounthInNumber === 1) {
+  //   mountInLetters = "January";
+  // } else if (mounthInNumber === 2) {
+  //   mountInLetters = "February";
+  // } else if (mounthInNumber === 3) {
+  //   mountInLetters = "March";
+  // } else if (mounthInNumber === 4) {
+  //   mountInLetters = "April";
+  // } else if (mounthInNumber === 5) {
+  //   mountInLetters = "May ";
+  // } else if (mounthInNumber === 6) {
+  //   mountInLetters = "June ";
+  // } else if (mounthInNumber === 7) {
+  //   mountInLetters = "July ";
+  // } else if (mounthInNumber === 8) {
+  //   mountInLetters = "August ";
+  // } else if (mounthInNumber === 9) {
+  //   mountInLetters = "September";
+  // } else if (mounthInNumber === 10) {
+  //   mountInLetters = "October";
+  // } else if (mounthInNumber === 11) {
+  //   mountInLetters = "November";
+  // } else if (mounthInNumber === 12) {
+  //   mountInLetters = "December";
+  // }
   //-------------------------------
 
   const [StartTime, setStartTime] = useState("");
@@ -165,13 +178,13 @@ function ActivitiTracker() {
         <input
           required
           value={StartTime}
-          placeholder="&#8194;Start time"
+          placeholder="&#8194;Start time mm:ss"
           onChange={(event) => setStartTime(event.target.value)}
         />
         <input
           required
           value={FinishTime}
-          placeholder="&#8194;Finish time"
+          placeholder="&#8194;Finish time mm:ss"
           onChange={(event) => setFinishTime(event.target.value)}
         />
         <input
@@ -185,9 +198,7 @@ function ActivitiTracker() {
           name="choice[]"
           onChange={(event) => setActivity(event.target.value)}
         >
-          <option selected disabled>
-            Select activity type
-          </option>
+          <option>Select activity type</option>
           <option value="Ride">Ride</option>
           <option value="Run">Run</option>
         </select>
