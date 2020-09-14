@@ -12,7 +12,7 @@ npm install
 npm start
 ```
 ## Screenshot:
-https://picua.org/images/2020/08/10/39c8b2f52ccf031c417f69c0aeb86859.jpg
+https://github.com/Pozakhmarnyi/activity_tracker/blob/master/Screenshot.jpg
 
 ## Author
 
