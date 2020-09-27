@@ -16,6 +16,6 @@ https://github.com/Pozakhmarnyi/activity_tracker/blob/master/Screenshot.jpg
 
 ## Author
 
-👤 **Mikhailo Pasternak**
+👤 **Mykhailo Pasternak**
 
 https://www.linkedin.com/in/mykhailo-pasternak/
